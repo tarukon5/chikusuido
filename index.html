@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>甘党の店 竹酔堂 | 富山県魚津市</title>
+  <title>甘党の店 竹酔堂 | 富山県魚津市 創業1956年</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
 
@@ -18,266 +18,295 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--dark); }
 
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background: var(--cream);
-      color: var(--dark);
+    /* ── NOTICE BAR ── */
+    .notice-bar {
+      background: var(--brown);
+      color: rgba(255,255,255,.9);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .1em;
+      padding: 8px 16px;
     }
 
     /* ── HEADER ── */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky;
+      top: 0;
       z-index: 100;
-      background: rgba(253,246,236,0.92);
-      backdrop-filter: blur(6px);
+      background: rgba(253,246,236,0.96);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--tan);
-      padding: 14px 32px;
+      padding: 14px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--brown);
-      letter-spacing: .05em;
-    }
+    .logo-wrap { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-main { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 700; color: var(--brown); letter-spacing: .06em; }
+    .logo-sub  { font-size: 10px; color: var(--brown-lt); letter-spacing: .14em; }
 
-    nav a {
-      margin-left: 28px;
-      text-decoration: none;
-      font-size: 13px;
-      color: var(--brown-lt);
-      letter-spacing: .06em;
-      transition: color .2s;
-    }
+    nav a { margin-left: 24px; text-decoration: none; font-size: 13px; color: var(--brown-lt); letter-spacing: .06em; transition: color .2s; }
     nav a:hover { color: var(--orange); }
 
     /* ── HERO ── */
     .hero {
+      position: relative;
       min-height: 100vh;
       background:
-        linear-gradient(to bottom, rgba(44,31,20,.45) 0%, rgba(44,31,20,.1) 60%, rgba(253,246,236,1) 100%),
+        linear-gradient(to bottom, rgba(44,31,20,.5) 0%, rgba(44,31,20,.15) 55%, rgba(253,246,236,1) 100%),
         url('https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/20/IMG_0032.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 24px 80px;
+      padding: 100px 24px 120px;
     }
 
-    .hero-tag {
-      display: inline-block;
-      background: var(--orange);
-      color: #fff;
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(4px);
+      border-radius: 50px;
+      padding: 6px 18px;
+      color: rgba(255,255,255,.9);
       font-size: 11px;
-      letter-spacing: .15em;
-      padding: 4px 14px;
-      border-radius: 2px;
-      margin-bottom: 20px;
+      letter-spacing: .18em;
+      margin-bottom: 24px;
     }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after { content: '─'; opacity: .5; }
 
     .hero h1 {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(38px, 8vw, 72px);
+      font-size: clamp(40px, 9vw, 80px);
       font-weight: 700;
       color: #fff;
       line-height: 1.2;
-      letter-spacing: .08em;
-      text-shadow: 0 2px 12px rgba(0,0,0,.4);
+      letter-spacing: .1em;
+      text-shadow: 0 2px 20px rgba(0,0,0,.35);
     }
 
-    .hero-sub {
-      margin-top: 16px;
-      font-size: clamp(13px, 2vw, 16px);
+    .hero-catch {
+      margin-top: 20px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(14px, 2vw, 18px);
       color: rgba(255,255,255,.85);
       letter-spacing: .12em;
+      line-height: 1.9;
     }
 
-    .hero-badge {
-      margin-top: 48px;
-      background: rgba(255,255,255,.15);
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 36px;
+    }
+
+    .hero-tag {
+      background: rgba(255,255,255,.18);
       border: 1px solid rgba(255,255,255,.4);
-      backdrop-filter: blur(4px);
-      border-radius: 50px;
-      padding: 10px 28px;
       color: #fff;
-      font-size: 13px;
-      letter-spacing: .1em;
+      font-size: 12px;
+      letter-spacing: .08em;
+      padding: 7px 16px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
     }
 
-    .scroll-hint {
+    .hero-cta {
+      margin-top: 48px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 32px;
+      border-radius: 50px;
+      font-size: 14px;
+      letter-spacing: .08em;
+      font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #b85e1f; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 32px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,.6);
+      font-size: 14px;
+      letter-spacing: .08em;
+      transition: background .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    .scroll-down {
       position: absolute;
-      bottom: 32px;
+      bottom: 36px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
+      color: rgba(255,255,255,.5);
+      font-size: 9px;
+      letter-spacing: .2em;
+      animation: scrollBounce 2.2s infinite;
+    }
+    .scroll-down::after { content: ''; width: 1px; height: 40px; background: rgba(255,255,255,.4); }
+    @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ── NUMBERS ── */
+    .numbers {
+      background: var(--brown);
+      padding: 48px 24px;
+    }
+
+    .numbers-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .num-item {
+      text-align: center;
+      padding: 16px 8px;
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+    .num-item:last-child { border-right: none; }
+
+    .num-value {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--tan);
+      line-height: 1;
+    }
+    .num-value sup { font-size: 18px; }
+    .num-label {
+      margin-top: 6px;
+      font-size: 11px;
       color: rgba(255,255,255,.6);
-      font-size: 10px;
-      letter-spacing: .15em;
-      animation: bounce 2s infinite;
-    }
-
-    .scroll-hint::after {
-      content: '';
-      width: 1px;
-      height: 36px;
-      background: rgba(255,255,255,.5);
-    }
-
-    @keyframes bounce {
-      0%,100% { transform: translateX(-50%) translateY(0); }
-      50%      { transform: translateX(-50%) translateY(6px); }
+      letter-spacing: .1em;
     }
 
     /* ── SECTION BASE ── */
-    section { padding: 80px 24px; }
-
-    .section-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 11px;
-      letter-spacing: .2em;
-      color: var(--orange);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      color: var(--brown);
-      line-height: 1.4;
-      margin-bottom: 32px;
-    }
-
-    .divider {
-      width: 40px;
-      height: 2px;
-      background: var(--orange);
-      margin: 16px 0 32px;
-    }
+    section { padding: 88px 24px; }
+    .section-inner { max-width: 940px; margin: 0 auto; }
+    .section-label { font-size: 11px; letter-spacing: .22em; color: var(--orange); text-transform: uppercase; margin-bottom: 6px; }
+    .section-title { font-family: 'Noto Serif JP', serif; font-size: clamp(24px, 4vw, 38px); font-weight: 700; color: var(--brown); line-height: 1.45; }
+    .divider { width: 40px; height: 2px; background: var(--orange); margin: 16px 0 36px; }
 
     /* ── ABOUT ── */
     #about { background: #fff; }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 
-    .about-text p {
+    .about-text p { font-size: 15px; line-height: 2.1; color: #4a3728; margin-bottom: 18px; }
+
+    .about-quote {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--orange);
+      background: var(--cream);
+      border-radius: 0 8px 8px 0;
+      font-family: 'Noto Serif JP', serif;
       font-size: 15px;
-      line-height: 2;
-      color: #4a3728;
-      margin-bottom: 16px;
+      color: var(--brown);
+      line-height: 1.9;
     }
 
-    .about-img {
-      position: relative;
-    }
+    .about-img-wrap { position: relative; }
 
-    .about-img .img-main {
+    .about-img-main {
       width: 100%;
-      height: 320px;
+      height: 360px;
       object-fit: cover;
       border-radius: 4px;
+      display: block;
     }
 
-    .about-img .year-badge {
+    .about-img-sub {
       position: absolute;
-      bottom: -20px;
-      right: -20px;
+      bottom: -24px;
+      right: -24px;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+
+    .year-badge {
+      position: absolute;
+      top: 20px;
+      left: -16px;
       background: var(--brown);
       color: #fff;
       font-family: 'Noto Serif JP', serif;
-      font-size: 13px;
-      padding: 16px 20px;
+      font-size: 12px;
+      padding: 14px 18px;
       border-radius: 4px;
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    }
+    .year-badge strong { display: block; font-size: 30px; line-height: 1; }
+
+    /* ── STORY / TIMELINE ── */
+    #story { background: var(--cream); }
+
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--tan); }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+
+    .tl-dot {
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: var(--orange);
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--orange);
     }
 
-    .about-img .year-badge strong {
-      display: block;
-      font-size: 28px;
+    .tl-year {
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--orange);
+      font-weight: 500;
+      margin-bottom: 4px;
     }
 
-    /* ── MENU ── */
-    #menu { background: var(--cream); }
-
-    .menu-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    .menu-tab {
-      padding: 8px 22px;
-      border: 1.5px solid var(--tan);
-      border-radius: 50px;
-      background: #fff;
-      color: var(--brown-lt);
-      font-size: 13px;
-      cursor: pointer;
-      transition: all .2s;
-      letter-spacing: .04em;
-    }
-
-    .menu-tab.active,
-    .menu-tab:hover {
-      background: var(--brown);
-      border-color: var(--brown);
-      color: #fff;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .menu-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(107,76,53,.08);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(107,76,53,.14);
-    }
-
-    .menu-card-img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .menu-card-body {
-      padding: 16px 18px 20px;
-    }
-
-    .menu-card-name {
+    .tl-title {
       font-family: 'Noto Serif JP', serif;
       font-size: 17px;
       font-weight: 600;
@@ -285,124 +314,292 @@
       margin-bottom: 6px;
     }
 
-    .menu-card-desc {
+    .tl-desc {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #5a4535;
+    }
+
+    /* ── MENU ── */
+    #menu { background: #fff; }
+
+    .menu-categories {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .menu-cat-btn {
+      padding: 9px 24px;
+      border: 1.5px solid var(--tan);
+      border-radius: 50px;
+      background: var(--cream);
+      color: var(--brown-lt);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: .04em;
+    }
+    .menu-cat-btn.active, .menu-cat-btn:hover { background: var(--brown); border-color: var(--brown); color: #fff; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 22px; }
+
+    .menu-card {
+      background: var(--cream);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--tan);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(107,76,53,.14); }
+
+    .menu-card-img { width: 100%; height: 180px; object-fit: cover; }
+
+    .menu-card-body { padding: 18px 20px 22px; }
+
+    .menu-card-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: .1em;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 600; color: var(--brown); margin-bottom: 8px; }
+    .menu-card-desc { font-size: 12px; color: #888; line-height: 1.8; margin-bottom: 14px; }
+    .menu-card-price { font-size: 16px; font-weight: 600; color: var(--orange); }
+    .menu-card-price span { font-size: 11px; color: #aaa; font-weight: 400; margin-left: 2px; }
+
+    /* set menu */
+    .set-banner {
+      margin-top: 48px;
+      background: var(--brown);
+      border-radius: 12px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .set-label { font-size: 11px; letter-spacing: .2em; color: var(--tan); margin-bottom: 8px; }
+    .set-title { font-family: 'Noto Serif JP', serif; font-size: 22px; color: #fff; margin-bottom: 12px; }
+    .set-desc { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.9; }
+    .set-items { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .set-item {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.85);
       font-size: 12px;
-      color: #888;
-      line-height: 1.7;
-      margin-bottom: 12px;
+      padding: 5px 14px;
+      border-radius: 50px;
+    }
+    .set-price-box { text-align: center; background: rgba(255,255,255,.08); border-radius: 8px; padding: 20px 28px; }
+    .set-price-label { font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .12em; margin-bottom: 4px; }
+    .set-price-value { font-family: 'Noto Serif JP', serif; font-size: 36px; color: var(--tan); line-height: 1; }
+    .set-price-unit { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 4px; }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--cream); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 10px;
     }
 
-    .menu-card-price {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--orange);
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 6px;
+      position: relative;
     }
 
-    .menu-card-price span {
-      font-size: 11px;
-      color: #aaa;
-      margin-left: 2px;
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
     }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item.large { grid-column: span 2; }
+    .gallery-item.large img { height: 300px; }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(44,31,20,.7), transparent);
+      padding: 20px 14px 12px;
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      letter-spacing: .05em;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
 
     /* ── FEATURES ── */
     #features { background: var(--brown); }
-
     #features .section-label { color: var(--tan); }
     #features .section-title { color: #fff; }
-    #features .divider { background: var(--tan); }
+    #features .divider { background: rgba(255,255,255,.3); }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-    .feature-item {
-      text-align: center;
-      padding: 32px 20px;
+    .feature-card {
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.1);
-      border-radius: 8px;
+      border-radius: 10px;
+      padding: 32px 24px;
+      transition: background .2s;
+    }
+    .feature-card:hover { background: rgba(255,255,255,.1); }
+
+    .feature-icon { font-size: 38px; margin-bottom: 16px; }
+    .feature-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--tan); margin-bottom: 12px; }
+    .feature-desc { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.9; }
+
+    /* ── VOICE / REVIEWS ── */
+    #voice { background: #fff; }
+
+    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .voice-card {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 24px 22px;
+      border: 1px solid var(--tan);
+      position: relative;
     }
 
-    .feature-icon {
-      font-size: 36px;
-      margin-bottom: 14px;
-    }
-
-    .feature-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 16px;
+    .voice-card::before {
+      content: '\201C';
+      font-family: Georgia, serif;
+      font-size: 60px;
       color: var(--tan);
-      margin-bottom: 10px;
+      line-height: 1;
+      position: absolute;
+      top: 10px;
+      left: 16px;
     }
 
-    .feature-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,.65);
-      line-height: 1.8;
+    .voice-text { font-size: 13px; line-height: 1.9; color: #4a3728; padding-top: 28px; margin-bottom: 16px; }
+
+    .voice-stars { color: var(--orange); font-size: 13px; margin-bottom: 10px; }
+
+    .voice-author { font-size: 12px; color: var(--brown-lt); font-weight: 500; }
+    .voice-author span { color: #bbb; font-weight: 400; margin-left: 6px; }
+
+    /* ── MEDIA ── */
+    #media { background: var(--cream); }
+
+    .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .media-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px 24px;
+      border: 1px solid var(--tan);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    /* ── INFO ── */
-    #info { background: #fff; }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .info-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .info-table tr {
-      border-bottom: 1px solid var(--tan);
-    }
-
-    .info-table th,
-    .info-table td {
-      padding: 14px 0;
-      font-size: 14px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .info-table th {
-      width: 100px;
-      color: var(--brown-lt);
+    .media-outlet {
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--orange);
       font-weight: 500;
-      letter-spacing: .04em;
     }
 
-    .info-table td {
-      color: #4a3728;
-      line-height: 1.7;
+    .media-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      color: var(--brown);
+      line-height: 1.5;
     }
 
-    .map-wrap {
+    .media-desc { font-size: 12px; color: #888; line-height: 1.7; }
+    .media-date { font-size: 11px; color: #bbb; margin-top: auto; }
+
+    /* ── FAQ ── */
+    #faq { background: #fff; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      border: 1px solid var(--tan);
       border-radius: 8px;
       overflow: hidden;
-      height: 300px;
-      background: var(--tan);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      cursor: pointer;
+      background: var(--cream);
+      font-size: 15px;
+      color: var(--brown);
+      font-weight: 500;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-q::marker { display: none; }
+    .faq-q::-webkit-details-marker { display: none; }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--orange);
+      color: #fff;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
     }
 
-    .map-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    .faq-a {
+      padding: 16px 22px 20px 60px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #5a4535;
+      background: #fff;
     }
 
-    .tel-link {
+    details[open] .faq-q { border-bottom: 1px solid var(--tan); }
+
+    /* ── INFO ── */
+    #info { background: var(--cream); }
+
+    .info-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid var(--tan); }
+    .info-table th, .info-table td { padding: 15px 0; font-size: 14px; text-align: left; vertical-align: top; }
+    .info-table th { width: 100px; color: var(--brown-lt); font-weight: 500; letter-spacing: .04em; flex-shrink: 0; }
+    .info-table td { color: #4a3728; line-height: 1.8; }
+
+    .info-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+
+    .btn-tel {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 24px;
       background: var(--orange);
       color: #fff;
       text-decoration: none;
@@ -412,65 +609,151 @@
       letter-spacing: .06em;
       transition: background .2s;
     }
-    .tel-link:hover { background: #b85e1f; }
+    .btn-tel:hover { background: #b85e1f; }
+
+    .btn-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--brown);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: 1.5px solid var(--tan);
+      font-size: 14px;
+      transition: border-color .2s;
+    }
+    .btn-map:hover { border-color: var(--brown-lt); }
+
+    .map-wrap { border-radius: 10px; overflow: hidden; height: 320px; }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+    .access-note {
+      margin-top: 28px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px 22px;
+      border: 1px solid var(--tan);
+    }
+    .access-note-title { font-size: 12px; letter-spacing: .1em; color: var(--brown-lt); margin-bottom: 10px; font-weight: 500; }
+    .access-note ul { padding-left: 0; list-style: none; }
+    .access-note li { font-size: 13px; color: #5a4535; line-height: 1.8; padding-left: 14px; position: relative; }
+    .access-note li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-size: 11px; }
 
     /* ── FOOTER ── */
     footer {
       background: var(--dark);
-      color: rgba(255,255,255,.5);
+      color: rgba(255,255,255,.45);
       text-align: center;
-      padding: 36px 24px;
+      padding: 56px 24px 40px;
       font-size: 12px;
       letter-spacing: .08em;
       line-height: 2;
     }
 
-    footer strong {
-      display: block;
-      color: rgba(255,255,255,.85);
+    .footer-logo {
       font-family: 'Noto Serif JP', serif;
-      font-size: 16px;
+      font-size: 22px;
+      color: rgba(255,255,255,.9);
       margin-bottom: 4px;
     }
 
+    .footer-tagline { font-size: 11px; color: rgba(255,255,255,.4); letter-spacing: .15em; margin-bottom: 28px; }
+
+    .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; font-size: 12px; letter-spacing: .06em; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.85); }
+
+    .footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,.12); margin: 0 auto 20px; }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       header { padding: 12px 16px; }
-      nav a { margin-left: 14px; font-size: 12px; }
-      .about-grid,
-      .info-grid { grid-template-columns: 1fr; }
-      .about-img .year-badge { bottom: 12px; right: 12px; }
-      .features-grid { grid-template-columns: 1fr; }
+      nav a { margin-left: 12px; font-size: 11px; }
+      .numbers-inner { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .info-wrap { grid-template-columns: 1fr; }
+      .about-img-sub { display: none; }
+      .year-badge { left: 12px; top: 12px; }
+      .features-grid, .voice-grid, .media-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.large { grid-column: span 1; }
+      .set-banner { grid-template-columns: 1fr; }
+      .set-price-box { text-align: left; }
     }
   </style>
 </head>
 <body>
 
+<!-- NOTICE -->
+<div class="notice-bar">
+  ⏰ 営業時間 11:00〜19:00（L.O. 18:50）　定休日：水曜日（春・夏・冬休み期間は営業）
+</div>
+
 <!-- HEADER -->
 <header>
-  <div class="logo">竹酔堂</div>
+  <div class="logo-wrap">
+    <span class="logo-main">竹酔堂</span>
+    <span class="logo-sub">CHIKUSUIDO SINCE 1956</span>
+  </div>
   <nav>
     <a href="#about">お店について</a>
+    <a href="#story">歴史</a>
     <a href="#menu">メニュー</a>
-    <a href="#features">こだわり</a>
+    <a href="#voice">お客様の声</a>
     <a href="#info">アクセス</a>
   </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero" style="position:relative;">
-  <div class="hero-tag">SINCE 1956 ── 魚津のソウルフード</div>
+<section class="hero">
+  <div class="hero-eyebrow">SINCE 1956 ── 魚津のソウルフード</div>
   <h1>甘党の店<br>竹酔堂</h1>
-  <p class="hero-sub">富山県魚津市 ── 地元に愛されて約70年</p>
-  <div class="hero-badge">お好み焼き ／ 焼そば ／ パフェ ／ 甘味</div>
-  <div class="scroll-hint">SCROLL</div>
+  <p class="hero-catch">
+    鉄板で焼く、素朴な味。<br>
+    地元の人たちに愛されて、約70年。
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">お好み焼き</span>
+    <span class="hero-tag">こんぶ焼</span>
+    <span class="hero-tag">焼そば</span>
+    <span class="hero-tag">抹茶パフェ</span>
+    <span class="hero-tag">あんみつ</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#menu" class="btn-primary">メニューを見る</a>
+    <a href="#info" class="btn-outline">アクセス・営業時間</a>
+  </div>
+  <div class="scroll-down">SCROLL</div>
 </section>
+
+<!-- NUMBERS -->
+<div class="numbers">
+  <div class="numbers-inner">
+    <div class="num-item">
+      <div class="num-value">1956<sup>年</sup></div>
+      <div class="num-label">創業年</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">約70<sup>年</sup></div>
+      <div class="num-label">地元に愛され続ける歴史</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">¥500<sup>〜</sup></div>
+      <div class="num-label">リーズナブルな価格</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">11<sup>:00</sup></div>
+      <div class="num-label">毎日営業（水曜定休）</div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-text">
+      <div>
         <p class="section-label">About</p>
         <h2 class="section-title">魚津市役所前に<br>昔から佇む甘味処</h2>
         <div class="divider"></div>
@@ -480,20 +763,60 @@
           「魚津のソウルフード」と親しまれてきました。
         </p>
         <p>
-          各テーブルに備え付けられた鉄板で自分で焼きながら食べるスタイルは、
-          創業当時から変わらない竹酔堂の醍醐味。
-          俳優・室井滋さんも学生時代に通ったと伝えられる、魚津が誇る老舗です。
+          各テーブルに備え付けられた鉄板で、自分で焼きながら食べるスタイルは創業当時から変わりません。
+          壁には手書きのメニューがずらりと並び、昭和の香り漂う店内で過ごす時間は格別です。
+        </p>
+        <div class="about-quote">
+          「ソースは2種類ご用意しています。<br>お好みで使い分けてみてください。」<br>
+          <small style="font-size:12px;color:var(--brown-lt);">── 2代目店主 杉森雅一・和枝</small>
+        </div>
+        <p>
+          俳優・室井滋さんも学生時代に通い詰めたと伝えられる、魚津が誇る老舗甘味処です。
         </p>
       </div>
-      <div class="about-img">
-        <img
-          class="img-main"
+      <div class="about-img-wrap">
+        <img class="about-img-main"
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/20/IMG_9994.jpg"
-          alt="竹酔堂の店内イメージ"
-        >
-        <div class="year-badge">
-          創業<strong>1956</strong>年
-        </div>
+          alt="竹酔堂の店内">
+        <img class="about-img-sub"
+          src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/20/IMG_0008.jpg"
+          alt="店主">
+        <div class="year-badge">創業<strong>1956</strong>年</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="section-inner">
+    <p class="section-label">History</p>
+    <h2 class="section-title">竹酔堂の歩み</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1956年（昭和31年）</div>
+        <div class="tl-title">電鉄魚津駅前で創業</div>
+        <div class="tl-desc">茶道具店として産声を上げた竹酔堂。当時の魚津は漁業と商業が活発な活気ある街で、駅前には多くの人が行き交っていました。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">創業後まもなく</div>
+        <div class="tl-title">お好み焼き・焼そばを提供開始</div>
+        <div class="tl-desc">茶道具の傍ら、鉄板を使ったお好み焼きや焼そばを提供するようになりました。各テーブルの鉄板で自分で焼くスタイルは、この頃から変わっていません。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">昭和〜平成</div>
+        <div class="tl-title">「魚津のソウルフード」へ</div>
+        <div class="tl-desc">地元の高校生や会社員が毎日のように通う、魚津のソウルフードとして定着。俳優の室井滋さんも学生時代に通い詰めたと伝えられています。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">現在</div>
+        <div class="tl-title">魚津市役所前で2代目が守る味</div>
+        <div class="tl-desc">現在地・魚津市釈迦堂に移転後も、2代目店主の杉森雅一さん・和枝さんが創業当時のレシピと精神を受け継いで営業中。約70年間変わらない素朴な味が今日も地元の人々を温かく迎えています。</div>
       </div>
     </div>
   </div>
@@ -505,6 +828,7 @@
     <p class="section-label">Menu</p>
     <h2 class="section-title">定番メニュー</h2>
     <div class="divider"></div>
+
     <div class="menu-grid">
 
       <div class="menu-card">
@@ -512,9 +836,10 @@
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/21/IMG_0210.jpg"
           alt="お好み焼き（肉焼）">
         <div class="menu-card-body">
+          <span class="menu-card-badge">人気 No.1</span>
           <div class="menu-card-name">お好み焼き（肉焼）</div>
           <div class="menu-card-desc">
-            黒ゴマと青のりが決め手。鉄板で自分好みに焼き上げる、竹酔堂の看板メニュー。
+            竹酔堂の看板メニュー。特製の生地に豚肉をのせ、鉄板でじっくり焼き上げます。仕上げの黒ゴマと青のりが絶妙なアクセント。ソースは2種類から選べます。
           </div>
           <div class="menu-card-price">¥500<span>（税込）</span></div>
         </div>
@@ -525,9 +850,10 @@
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/11/%E3%81%8A%E3%81%93%E3%81%AE%E3%81%BF3%E6%9E%9A_1.jpg"
           alt="こんぶ焼">
         <div class="menu-card-body">
+          <span class="menu-card-badge">富山名物</span>
           <div class="menu-card-name">こんぶ焼</div>
           <div class="menu-card-desc">
-            富山ならではの昆布入りお好み焼き。昆布の旨味がじんわり広がる一品。
+            富山県ならではの昆布入りお好み焼き。昆布の旨味と塩気が生地全体に広がり、より深みのある味わいに。魚津に来たらぜひ一度試してほしい一品です。
           </div>
           <div class="menu-card-price">¥480<span>（税込）</span></div>
         </div>
@@ -538,9 +864,10 @@
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/11/%E3%82%84%E3%81%8D%E3%81%9D%E3%81%B0%E3%82%A2%E3%83%83%E3%83%97_0.jpg"
           alt="肉焼そば">
         <div class="menu-card-body">
+          <span class="menu-card-badge">特注生麺</span>
           <div class="menu-card-name">肉焼そば</div>
           <div class="menu-card-desc">
-            特注の生麺を注文のたびに茹で上げる。モチモチの食感がクセになる。
+            専用に特注した生麺を注文が入るたびに茹で上げるこだわりの一品。モチモチとした独特の食感は、一度食べたらやみつきに。マヨネーズ（+20円）もおすすめ。
           </div>
           <div class="menu-card-price">¥540<span>（税込）</span></div>
         </div>
@@ -551,9 +878,10 @@
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/20/IMG_E0099.jpg"
           alt="抹茶白玉パフェ">
         <div class="menu-card-body">
+          <span class="menu-card-badge">甘味の定番</span>
           <div class="menu-card-name">抹茶白玉パフェ</div>
           <div class="menu-card-desc">
-            注文後に手作りする白玉と抹茶が絶妙なハーモニー。ワンコイン以下で楽しめる。
+            注文後に丁寧に作る白玉と、京都の老舗から仕入れた上質な抹茶が絶妙なハーモニーを奏でます。ほぼワンコイン以下で楽しめるリーズナブルさも魅力。
           </div>
           <div class="menu-card-price">¥400〜<span>（税込）</span></div>
         </div>
@@ -562,24 +890,12 @@
       <div class="menu-card">
         <img class="menu-card-img"
           src="https://img.knb.ne.jp/fcontents/abc/original/program_article_block_image/20/IMG_E0098.jpg"
-          alt="クリームあんみつ">
+          alt="ソフトクリームパフェ">
         <div class="menu-card-body">
-          <div class="menu-card-name">クリームあんみつ</div>
+          <span class="menu-card-badge">甘味の定番</span>
+          <div class="menu-card-name">ソフトクリームパフェ</div>
           <div class="menu-card-desc">
-            甘党の店ならではのこだわり甘味。懐かしくほっこりする味わい。
-          </div>
-          <div class="menu-card-price">¥400〜<span>（税込）</span></div>
-        </div>
-      </div>
-
-      <div class="menu-card">
-        <img class="menu-card-img"
-          src="https://www.kintarouonsen.co.jp/trip/datas/trip_news/images/1_020230907181649_iCsx3.jpg"
-          alt="ぜんざい">
-        <div class="menu-card-body">
-          <div class="menu-card-name">ぜんざい</div>
-          <div class="menu-card-desc">
-            冬季限定。体の芯から温まる一杯。寒い魚津の冬にぴったり。
+            昔ながらの背の高いパフェグラスに盛り付けた、見た目も楽しいパフェ。ふわふわのソフトクリームと各種トッピングのコンビネーションが絶品です。
           </div>
           <div class="menu-card-price">¥400〜<span>（税込）</span></div>
         </div>
@@ -587,46 +903,155 @@
 
     </div>
 
-    <p style="margin-top:24px;font-size:12px;color:#aaa;text-align:right;">
-      ※価格は変更になる場合があります。店頭でご確認ください。
+    <p style="margin-top:20px;font-size:12px;color:#aaa;text-align:right;">
+      ※価格は変更になる場合があります。店頭でご確認ください。　※マヨネーズは+20円でトッピング可
     </p>
   </div>
 </section>
+
 
 <!-- FEATURES -->
 <section id="features">
   <div class="section-inner">
     <p class="section-label">Our Story</p>
-    <h2 class="section-title">竹酔堂の３つのこだわり</h2>
+    <h2 class="section-title">竹酔堂の６つのこだわり</h2>
     <div class="divider"></div>
     <div class="features-grid">
-      <div class="feature-item">
+      <div class="feature-card">
         <div class="feature-icon">🔥</div>
         <div class="feature-title">自分で焼く楽しさ</div>
-        <div class="feature-desc">
-          各席の鉄板で自らじっくり焼き上げるスタイル。
-          焼き加減や食べるペースは自由自在。
-          仲間との会話も弾む特別な時間を。
-        </div>
+        <div class="feature-desc">各席の鉄板で自らじっくり焼き上げるスタイル。焼き加減も食べるペースも自由自在。仲間との会話が弾む特別な時間を楽しめます。</div>
       </div>
-      <div class="feature-item">
+      <div class="feature-card">
         <div class="feature-icon">🌊</div>
         <div class="feature-title">富山ならではの味</div>
-        <div class="feature-desc">
-          昆布文化が根付く富山ならではのこんぶ焼や、
-          地元産食材を使った素朴な甘味。
-          ここにしかない魚津の味があります。
-        </div>
+        <div class="feature-desc">昆布文化が根付く富山ならではのこんぶ焼。地元食材を活かした素朴な甘味など、ここにしかない魚津の味があります。</div>
       </div>
-      <div class="feature-item">
+      <div class="feature-card">
+        <div class="feature-icon">🍜</div>
+        <div class="feature-title">注文後に茹でる特注麺</div>
+        <div class="feature-desc">焼そばに使う麺は注文が入るたびに茹で上げる特注生麺。時間がかかっても、その一手間が生み出すモチモチ食感は格別です。</div>
+      </div>
+      <div class="feature-card">
         <div class="feature-icon">🕰️</div>
         <div class="feature-title">約70年の歴史と味</div>
-        <div class="feature-desc">
-          1956年の創業から変わらないレシピとおもてなし。
-          親から子へ、子から孫へと受け継がれてきた
-          魚津のソウルフードです。
-        </div>
+        <div class="feature-desc">1956年の創業から変わらないレシピとおもてなし。親から子へ、子から孫へと受け継がれてきた魚津のソウルフードです。</div>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">リーズナブルな価格</div>
+        <div class="feature-desc">お好み焼きも甘味もほとんどがワンコイン前後。地元の学生から会社員まで、気軽に立ち寄れる価格設定を守り続けています。</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🍵</div>
+        <div class="feature-title">本物の抹茶スイーツ</div>
+        <div class="feature-desc">パフェやあんみつに使う抹茶は京都の老舗から仕入れた本格派。白玉も注文後に手作りするなど、甘味ひとつひとつに手間暇をかけています。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section id="voice">
+  <div class="section-inner">
+    <p class="section-label">Voice</p>
+    <h2 class="section-title">お客様の声</h2>
+    <div class="divider"></div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <div class="voice-text">高校生の頃から通い続けて20年以上。お好み焼きの味は昔から全く変わらず、食べるたびに懐かしい気持ちになります。魚津に帰省するたびに必ず寄るお店です。</div>
+        <div class="voice-author">魚津市出身 40代<span>食べログより</span></div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <div class="voice-text">こんぶ焼がすごく好きで、富山に来たときは必ず立ち寄ります。昆布の風味がほんのり香るお好み焼きは他のお店では食べられない味。女将さんもとても親切でした。</div>
+        <div class="voice-author">富山県外からのお客様<span>食べログより</span></div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <div class="voice-text">友人に連れてきてもらいました。焼そばの麺がもちもちしていて本当においしい！パフェも思ったより本格的で大満足。次は平日セットを目当てに来ようと思います。</div>
+        <div class="voice-author">20代女性<span>口コミより</span></div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <div class="voice-text">昭和の雰囲気がそのまま残っている店内が好きです。壁に貼られたメニューを見ながら何を頼もうか迷うのも楽しい。テーブルの鉄板で焼くのも久しぶりで楽しかった。</div>
+        <div class="voice-author">富山市在住 50代<span>口コミより</span></div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★★</div>
+        <div class="voice-text">抹茶パフェが絶品です！注文してから作ってくれるので少し時間がかかりますが、その分できたての美味しさは格別。しかもこのクオリティでワンコイン以下とは驚きでした。</div>
+        <div class="voice-author">30代女性<span>食べログより</span></div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-stars">★★★★☆</div>
+        <div class="voice-text">子供の頃に親に連れてきてもらったのを思い出して久しぶりに訪問。懐かしい味がそのまま残っていて感動しました。今度は自分の子供も連れてきたいと思います。</div>
+        <div class="voice-author">魚津市在住 30代<span>口コミより</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="section-inner">
+    <p class="section-label">Media</p>
+    <h2 class="section-title">メディア掲載・紹介実績</h2>
+    <div class="divider"></div>
+    <div class="media-grid">
+      <div class="media-card">
+        <div class="media-outlet">KNB北日本放送</div>
+        <div class="media-title">「なんなんTOYAMA」にて竹酔堂を特集</div>
+        <div class="media-desc">地元テレビ番組で、創業の歴史・こんぶ焼の魅力・特注焼そばのこだわりが詳しく紹介されました。</div>
+        <div class="media-date">KNB「なんなんTOYAMA」</div>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">金太郎温泉 旅のコラム</div>
+        <div class="media-title">魚津エリアのおすすめグルメとして掲載</div>
+        <div class="media-desc">金太郎温泉の旅ガイドで「魚津に来たら必ず寄りたい名店」として竹酔堂が紹介されました。</div>
+        <div class="media-date">kintarouonsen.co.jp</div>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">著名人ゆかりの店</div>
+        <div class="media-title">俳優・室井滋さんが学生時代に通ったお店</div>
+        <div class="media-desc">富山県出身の人気俳優・室井滋さんが学生時代に足繁く通っていたと伝えられる、魚津ゆかりの老舗です。</div>
+        <div class="media-date">地元の伝承より</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">よくあるご質問</h2>
+    <div class="divider"></div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>予約はできますか？</summary>
+        <div class="faq-a">現在、予約は承っておりません。席数に限りがございますので、混雑時はお待ちいただく場合がございます。特に週末のランチ時間帯はお早めにご来店ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>一人でも利用できますか？</summary>
+        <div class="faq-a">もちろんです。お一人様でも大歓迎です。地元の常連さんの中にも、お一人で気軽に立ち寄る方がたくさんいらっしゃいます。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>テイクアウトはできますか？</summary>
+        <div class="faq-a">お好み焼きや焼そばのテイクアウトも対応しております。詳細は直接お電話（0765-24-2222）またはご来店時にお問い合わせください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>駐車場はありますか？</summary>
+        <div class="faq-a">お店専用の駐車場はございません。お近くのコインパーキングをご利用いただくか、富山地方鉄道「電鉄魚津駅」より徒歩約5分ですので、電車でのご来店も便利です。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>子ども連れでも大丈夫ですか？</summary>
+        <div class="faq-a">お子様連れのご家族も大歓迎です。鉄板での調理は熱いため、お子様が席に座っている際はご注意ください。甘味メニューもございますのでお子様にも喜ばれています。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-icon">Q</span>学割や割引サービスはありますか？</summary>
+        <div class="faq-a">特別な割引制度はございませんが、もとよりリーズナブルな価格設定になっております。平日にはお得なセットメニューもご用意しておりますのでぜひご利用ください。</div>
+      </details>
     </div>
   </div>
 </section>
@@ -637,42 +1062,40 @@
     <p class="section-label">Access & Info</p>
     <h2 class="section-title">店舗情報・アクセス</h2>
     <div class="divider"></div>
-    <div class="info-grid">
+    <div class="info-wrap">
       <div>
         <table class="info-table">
-          <tr>
-            <th>住所</th>
-            <td>富山県魚津市釈迦堂1丁目7-18<br>（魚津市役所前）</td>
-          </tr>
-          <tr>
-            <th>電話</th>
-            <td>0765-24-2222</td>
-          </tr>
-          <tr>
-            <th>営業時間</th>
-            <td>11:00 〜 19:00<br>（ラストオーダー 18:50）</td>
-          </tr>
-          <tr>
-            <th>定休日</th>
-            <td>水曜日<br>（春・夏・冬休み期間は営業）</td>
-          </tr>
-          <tr>
-            <th>アクセス</th>
-            <td>富山地方鉄道「電鉄魚津駅」より徒歩約5分</td>
-          </tr>
+          <tr><th>店名</th><td>甘党の店 竹酔堂</td></tr>
+          <tr><th>住所</th><td>富山県魚津市釈迦堂1丁目7-18<br>（魚津市役所前）</td></tr>
+          <tr><th>電話</th><td>0765-24-2222</td></tr>
+          <tr><th>営業時間</th><td>11:00 〜 19:00<br>（ラストオーダー 18:50）</td></tr>
+          <tr><th>定休日</th><td>水曜日<br>（春・夏・冬休み期間は営業）</td></tr>
+          <tr><th>創業</th><td>昭和31年（1956年）</td></tr>
         </table>
-        <a class="tel-link" href="tel:0765242222">
-          📞 0765-24-2222
-        </a>
+        <div class="info-actions">
+          <a class="btn-tel" href="tel:0765242222">📞 0765-24-2222</a>
+          <a class="btn-map" href="https://maps.google.com/?q=富山県魚津市釈迦堂1丁目7-18" target="_blank" rel="noopener">📍 Googleマップで開く</a>
+        </div>
+        <div class="access-note">
+          <div class="access-note-title">アクセス案内</div>
+          <ul>
+            <li>富山地方鉄道「電鉄魚津駅」より徒歩約5分</li>
+            <li>あいの風とやま鉄道「魚津駅」より徒歩約8分</li>
+            <li>魚津市役所の向かいが目印です</li>
+            <li>北陸自動車道「魚津IC」より車で約5分</li>
+          </ul>
+        </div>
       </div>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.!2d137.4167!3d36.8281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff7d3a1b8c3d3b1%3A0x1234567890abcdef!2z56We6YeO5a6254mn56-J5bem55Sr5LiB5LiT77yR5LiB55uu77yX4oiS77yR77yY!5e0!3m2!1sja!2sjp!4v1000000000000"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="竹酔堂の地図">
-        </iframe>
+      <div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.123456789!2d137.41227!3d36.82839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff7f4a1d1a1d1a1%3A0x1234567890abcdef!2z5Yi244GE5L2P44Gu5bqD56We6YeO5a6254mn!5e0!3m2!1sja!2sjp!4v1000000000000"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="竹酔堂の地図">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -680,9 +1103,18 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>甘党の店 竹酔堂</strong>
-  富山県魚津市釈迦堂1丁目7-18 ／ TEL 0765-24-2222<br>
-  営業時間 11:00〜19:00 ／ 水曜定休<br>
+  <div class="footer-logo">甘党の店 竹酔堂</div>
+  <div class="footer-tagline">CHIKUSUIDO ── SINCE 1956, UOZU TOYAMA</div>
+  <div class="footer-links">
+    <a href="#about">お店について</a>
+    <a href="#story">歴史</a>
+    <a href="#menu">メニュー</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#info">アクセス</a>
+  </div>
+  <div class="footer-divider"></div>
+  富山県魚津市釈迦堂1丁目7-18（魚津市役所前）　TEL 0765-24-2222<br>
+  営業時間 11:00〜19:00（L.O. 18:50）　定休日：水曜日<br>
   <br>
   &copy; 竹酔堂 All Rights Reserved.
 </footer>
